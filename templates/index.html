@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:rgb(64, 87, 121);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+        }
+
+        .form-container {
+            background: rgba(130, 154, 190, 0.97);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.34);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #021945;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+            color: #021d5c;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        input[type="number"]:hover {
+            background: rgba(123, 143, 194, 0.635);
+        }
+
+        input[type="submit"] {
+            background:rgb(45, 85, 231);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background:rgb(25, 28, 32);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Loan Application Form</h2>
+        <form action="/predict" method="post">
+            <label>Gender:</label>
+            <select name="gender">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label>Marital Status:</label>
+            <select name="marrital_status">
+                <option value="0">Married</option>
+                <option value="1">Single</option>
+            </select>
+
+            <label>Education:</label>
+            <select name="education">
+                <option value="0">Literate</option>
+                <option value="1">Illiterate</option>
+            </select>
+
+            <label>Employment Type:</label>
+            <select name="self_employed">
+                <option value="0">Self-Employed</option>
+                <option value="1">Service</option>
+            </select>
+
+            <label>Applicant Income(in 1000s):</label>
+            <input type="number" name="applicant_income" required>
+
+            <label>Coapplicant Income(in 1000s):</label>
+            <input type="number" name="coapplicant_income" required>
+
+            <label>Loan Amount:</label>
+            <input type="number" name="loan_amount" required>
+
+            <label>Loan Period (in years):</label>
+            <input type="number" name="loan_period" required>
+
+            <label>Credit History:</label>
+            <select name="credit_history">
+                <option value="0">Good</option>
+                <option value="1">Bad</option>
+            </select>
+
+            <input type="submit" value="Check Approval">
+        </form>
+    </div>
+</body>
+</html>
