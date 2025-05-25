@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
 import pickle
 import pandas as pd
 import numpy as np
@@ -38,9 +38,9 @@ def loan_approv():
         
     prediction = model.predict(features)[0]
     predict = lr.predict([[total_income]])
-    result = ("Loan Approved", predict) if prediction == 0 else "Loan Rejected"
+    result = ('Loan Approved', 'Loan Amount: ',int(predict)) if prediction == 0 else 'Loan Rejected'
      
-    return f"<h3 style='text-align:center;'>{result}</h3><br><a href='/'>Back</a>"
+    return f"<h3 style='text-align:center; background-color:#f0f8ff; font-size:24px; color:#333; padding:20px;'>{result}</h3><br><a href='/' style='display:block; text-align:center; font-size:18px; color:blue;'>Back</a>"
 
 if __name__== "__main__":
     app.run(debug=True)
